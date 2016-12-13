@@ -17,6 +17,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     
+    let ref = FIRDatabase.database().reference(withPath: "city-items")
+
+    
     @IBAction func searchaAction(_ sender: Any) {
         let newCity = searchBar.text!.replacingOccurrences(of: " ", with: "+")
         
@@ -102,8 +105,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.cityForecast.text = cities[indexPath.row].forecast
         
         return cell
-        
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "segueDetails" {
                 if let indexWeather = tableView.indexPathForSelectedRow?.row {
                     let destination = segue.destination as? ThirdViewController
@@ -111,18 +115,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     // print(self.cities[indexWeather].cityName)
                 }
             }
-        }
-        
-//        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//            if segue.identifier == "segueDetail", let destination = segue.destination as? ThirdViewController {
-//                if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-//                    let cityName = cities[indexPath.row]
-//                    ThirdViewController.city = cityName.text
-//                }
-//            }
-//        }
-        
     }
+
     /*
     // MARK: - Navigation
 
