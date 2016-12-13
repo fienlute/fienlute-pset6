@@ -27,9 +27,38 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchButton: UIButton!
 
     // get api
-//    @IBAction func searchaAction(_ sender: Any) {
+   @IBAction func searchaAction(_ sender: Any) {
+    
+    let alert = UIAlertController(title: "Grocery Item",
+                                  message: "Add an Item",
+                                  preferredStyle: .alert)
+    let saveAction = UIAlertAction(title: "Save",
+                                   style: .default) { _ in
+                                    // 1
+                                    guard let textField = alert.textFields?.first,
+                                        let text = textField.text else { return }
+                                    
+                                    // 2
+                                    let cityItem = CityItem(name: text,
+                                                            addedByUser: self.user.email)
+                                    // 3
+                                    let cityItemRef = self.ref.child(text.lowercased())
+                                    
+                                    // 4
+                                    cityItemRef.setValue(cityItem.toAnyObject())
+    }
+    let cancelAction = UIAlertAction(title: "Cancel",
+                                     style: .default)
+    
+    alert.addTextField()
+    
+    alert.addAction(saveAction)
+    alert.addAction(cancelAction)
+    
+    present(alert, animated: true, completion: nil)
+    }
 //        let newCity = searchBar.text!.replacingOccurrences(of: " ", with: "+")
-//        
+//
 //        let myURL = URL(string: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22\(newCity)%2C%20nl%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys" )
 //        
 //        let request = URLRequest(url:myURL!)
@@ -193,36 +222,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        return cell
 //    }
 //    
-    @IBAction func addButtonDidTouch(_ sender: Any) {
-        
-        let alert = UIAlertController(title: "Grocery Item",
-                                      message: "Add an Item",
-                                      preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save",
-                                       style: .default) { _ in
-                                        // 1
-                                        guard let textField = alert.textFields?.first,
-                                            let text = textField.text else { return }
-                                        
-                                        // 2
-                                        let cityItem = CityItem(name: text,
-                                                               addedByUser: self.user.email)
-                                        // 3
-                                        let cityItemRef = self.ref.child(text.lowercased())
-                                        
-                                        // 4
-                                        cityItemRef.setValue(cityItem.toAnyObject())
-        }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default)
-        
-        alert.addTextField()
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
-    }
     
     func userCountButtonDidTouch() {
         performSegue(withIdentifier: listToUsers, sender: nil)

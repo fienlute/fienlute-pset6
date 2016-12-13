@@ -160,7 +160,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="search"/>
                                         <connections>
-                                            <action selector="addButtonDidTouch:" destination="3bB-0j-Rzd" eventType="touchUpInside" id="BnD-TT-4OJ"/>
                                             <action selector="searchaAction:" destination="3bB-0j-Rzd" eventType="touchUpInside" id="E7d-7f-hP4"/>
                                         </connections>
                                     </button>
