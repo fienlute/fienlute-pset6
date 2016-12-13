@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E1EA03A6B0233CCB8E513BD /* Pods_fienlute_pset6.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED90B239F71E0B32036966EB /* Pods_fienlute_pset6.framework */; };
 		EE1FD19C1DF6EF32008ECA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD19B1DF6EF32008ECA8C /* AppDelegate.swift */; };
 		EE1FD19E1DF6EF32008ECA8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD19D1DF6EF32008ECA8C /* ViewController.swift */; };
 		EE1FD1A11DF6EF32008ECA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1FD19F1DF6EF32008ECA8C /* Main.storyboard */; };
 		EE1FD1A31DF6EF32008ECA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1FD1A21DF6EF32008ECA8C /* Assets.xcassets */; };
 		EE1FD1A61DF6EF32008ECA8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1FD1A41DF6EF32008ECA8C /* LaunchScreen.storyboard */; };
+		EE1FD1AE1DF6F387008ECA8C /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = EE1FD1AD1DF6F387008ECA8C /* GoogleService-Info (1).plist */; };
+		EE1FD1B41DFA11BE008ECA8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1B31DFA11BE008ECA8C /* SecondViewController.swift */; };
+		EE1FD1B81DFA2D42008ECA8C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1B71DFA2D42008ECA8C /* CustomCell.swift */; };
+		EE1FD1BB1DFAE8EC008ECA8C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1BA1DFAE8EC008ECA8C /* City.swift */; };
+		EE1FD1BE1DFB2C07008ECA8C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1BD1DFB2C06008ECA8C /* README.md */; };
+		EE1FD1C01DFEDE3D008ECA8C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1BF1DFEDE3D008ECA8C /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4308B613BCCA088A1288A79B /* Pods-fienlute-pset6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fienlute-pset6.release.xcconfig"; path = "Pods/Target Support Files/Pods-fienlute-pset6/Pods-fienlute-pset6.release.xcconfig"; sourceTree = "<group>"; };
+		79B4FF3391C438FDE542FA2C /* Pods-fienlute-pset6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fienlute-pset6.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fienlute-pset6/Pods-fienlute-pset6.debug.xcconfig"; sourceTree = "<group>"; };
+		ED90B239F71E0B32036966EB /* Pods_fienlute_pset6.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fienlute_pset6.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1FD1981DF6EF32008ECA8C /* fienlute-pset6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fienlute-pset6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1FD19B1DF6EF32008ECA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1FD19D1DF6EF32008ECA8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +32,12 @@
 		EE1FD1A21DF6EF32008ECA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1FD1A51DF6EF32008ECA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE1FD1A71DF6EF32008ECA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE1FD1AD1DF6F387008ECA8C /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		EE1FD1B31DFA11BE008ECA8C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		EE1FD1B71DFA2D42008ECA8C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		EE1FD1BA1DFAE8EC008ECA8C /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		EE1FD1BD1DFB2C06008ECA8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EE1FD1BF1DFEDE3D008ECA8C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1EA03A6B0233CCB8E513BD /* Pods_fienlute_pset6.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F5BCDB87B9CDC6095FA1D24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79B4FF3391C438FDE542FA2C /* Pods-fienlute-pset6.debug.xcconfig */,
+				4308B613BCCA088A1288A79B /* Pods-fienlute-pset6.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B61A5676BFECDFA5EAEF4207 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED90B239F71E0B32036966EB /* Pods_fienlute_pset6.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE1FD18F1DF6EF31008ECA8C = {
 			isa = PBXGroup;
 			children = (
 				EE1FD19A1DF6EF32008ECA8C /* fienlute-pset6 */,
 				EE1FD1991DF6EF32008ECA8C /* Products */,
+				9F5BCDB87B9CDC6095FA1D24 /* Pods */,
+				B61A5676BFECDFA5EAEF4207 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +90,18 @@
 		EE1FD19A1DF6EF32008ECA8C /* fienlute-pset6 */ = {
 			isa = PBXGroup;
 			children = (
-				EE1FD19B1DF6EF32008ECA8C /* AppDelegate.swift */,
 				EE1FD19D1DF6EF32008ECA8C /* ViewController.swift */,
+				EE1FD1B31DFA11BE008ECA8C /* SecondViewController.swift */,
+				EE1FD1BF1DFEDE3D008ECA8C /* ThirdViewController.swift */,
+				EE1FD1BA1DFAE8EC008ECA8C /* City.swift */,
+				EE1FD19B1DF6EF32008ECA8C /* AppDelegate.swift */,
+				EE1FD1B71DFA2D42008ECA8C /* CustomCell.swift */,
 				EE1FD19F1DF6EF32008ECA8C /* Main.storyboard */,
 				EE1FD1A21DF6EF32008ECA8C /* Assets.xcassets */,
 				EE1FD1A41DF6EF32008ECA8C /* LaunchScreen.storyboard */,
 				EE1FD1A71DF6EF32008ECA8C /* Info.plist */,
+				EE1FD1AD1DF6F387008ECA8C /* GoogleService-Info (1).plist */,
+				EE1FD1BD1DFB2C06008ECA8C /* README.md */,
 			);
 			path = "fienlute-pset6";
 			sourceTree = "<group>";
@@ -71,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE1FD1AA1DF6EF32008ECA8C /* Build configuration list for PBXNativeTarget "fienlute-pset6" */;
 			buildPhases = (
+				3B05AC605B33B3E0BE5EF7BB /* 📦 Check Pods Manifest.lock */,
 				EE1FD1941DF6EF32008ECA8C /* Sources */,
 				EE1FD1951DF6EF32008ECA8C /* Frameworks */,
 				EE1FD1961DF6EF32008ECA8C /* Resources */,
+				A2AEE7244A74A13D2DDEFACF /* 📦 Embed Pods Frameworks */,
+				EA25695BAB04DADC54EE58F7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,17 +171,71 @@
 				EE1FD1A61DF6EF32008ECA8C /* LaunchScreen.storyboard in Resources */,
 				EE1FD1A31DF6EF32008ECA8C /* Assets.xcassets in Resources */,
 				EE1FD1A11DF6EF32008ECA8C /* Main.storyboard in Resources */,
+				EE1FD1AE1DF6F387008ECA8C /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B05AC605B33B3E0BE5EF7BB /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2AEE7244A74A13D2DDEFACF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fienlute-pset6/Pods-fienlute-pset6-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA25695BAB04DADC54EE58F7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fienlute-pset6/Pods-fienlute-pset6-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE1FD1941DF6EF32008ECA8C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1FD1BE1DFB2C07008ECA8C /* README.md in Sources */,
+				EE1FD1BB1DFAE8EC008ECA8C /* City.swift in Sources */,
+				EE1FD1B41DFA11BE008ECA8C /* SecondViewController.swift in Sources */,
+				EE1FD1C01DFEDE3D008ECA8C /* ThirdViewController.swift in Sources */,
 				EE1FD19E1DF6EF32008ECA8C /* ViewController.swift in Sources */,
+				EE1FD1B81DFA2D42008ECA8C /* CustomCell.swift in Sources */,
 				EE1FD19C1DF6EF32008ECA8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +357,7 @@
 		};
 		EE1FD1AB1DF6EF32008ECA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B4FF3391C438FDE542FA2C /* Pods-fienlute-pset6.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "fienlute-pset6/Info.plist";
@@ -270,6 +370,7 @@
 		};
 		EE1FD1AC1DF6EF32008ECA8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4308B613BCCA088A1288A79B /* Pods-fienlute-pset6.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "fienlute-pset6/Info.plist";
@@ -299,6 +400,7 @@
 				EE1FD1AC1DF6EF32008ECA8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
