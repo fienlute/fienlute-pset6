@@ -29,7 +29,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // get api
    @IBAction func searchaAction(_ sender: Any) {
     
-    let alert = UIAlertController(title: "Grocery Item",
+    let alert = UIAlertController(title: "City Item",
                                   message: "Add an Item",
                                   preferredStyle: .alert)
     let saveAction = UIAlertAction(title: "Save",
@@ -149,7 +149,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let cityItem = items[indexPath.row]
         
         cell.textLabel?.text = cityItem.name
@@ -166,8 +166,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let groceryItem = items[indexPath.row]
-            groceryItem.ref?.removeValue()
+            let cityItem = items[indexPath.row]
+            cityItem.ref?.removeValue()
         }
     }
     
@@ -175,7 +175,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // 1
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         // 2
-        let groceryItem = items[indexPath.row]
+        let cityItem = items[indexPath.row]
         // 3
 //        let toggledCompletion = !CityItem.completed
         // 4

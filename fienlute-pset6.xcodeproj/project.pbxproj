@@ -21,6 +21,7 @@
 		EE1FD1C21DFFF3B6008ECA8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE1FD1C11DFFF3B6008ECA8C /* GoogleService-Info.plist */; };
 		EE1FD1CA1E005905008ECA8C /* CityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1C91E005905008ECA8C /* CityItem.swift */; };
 		EE1FD1CC1E005BFE008ECA8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1CB1E005BFE008ECA8C /* User.swift */; };
+		EE1FD1CE1E01946E008ECA8C /* REVIEW.md in Sources */ = {isa = PBXBuildFile; fileRef = EE1FD1CD1E01946E008ECA8C /* REVIEW.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EE1FD1C11DFFF3B6008ECA8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE1FD1C91E005905008ECA8C /* CityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityItem.swift; sourceTree = "<group>"; };
 		EE1FD1CB1E005BFE008ECA8C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EE1FD1CD1E01946E008ECA8C /* REVIEW.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = REVIEW.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +98,10 @@
 			children = (
 				EE1FD19D1DF6EF32008ECA8C /* ViewController.swift */,
 				EE1FD1B31DFA11BE008ECA8C /* SecondViewController.swift */,
-				EE1FD1CB1E005BFE008ECA8C /* User.swift */,
 				EE1FD1BF1DFEDE3D008ECA8C /* ThirdViewController.swift */,
 				EE1FD1BA1DFAE8EC008ECA8C /* City.swift */,
 				EE1FD1C91E005905008ECA8C /* CityItem.swift */,
+				EE1FD1CB1E005BFE008ECA8C /* User.swift */,
 				EE1FD19B1DF6EF32008ECA8C /* AppDelegate.swift */,
 				EE1FD1B71DFA2D42008ECA8C /* CustomCell.swift */,
 				EE1FD19F1DF6EF32008ECA8C /* Main.storyboard */,
@@ -108,6 +110,7 @@
 				EE1FD1C11DFFF3B6008ECA8C /* GoogleService-Info.plist */,
 				EE1FD1A71DF6EF32008ECA8C /* Info.plist */,
 				EE1FD1BD1DFB2C06008ECA8C /* README.md */,
+				EE1FD1CD1E01946E008ECA8C /* REVIEW.md */,
 			);
 			path = "fienlute-pset6";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1FD1CE1E01946E008ECA8C /* REVIEW.md in Sources */,
 				EE1FD1BE1DFB2C07008ECA8C /* README.md in Sources */,
 				EE1FD1CA1E005905008ECA8C /* CityItem.swift in Sources */,
 				EE1FD1BB1DFAE8EC008ECA8C /* City.swift in Sources */,
