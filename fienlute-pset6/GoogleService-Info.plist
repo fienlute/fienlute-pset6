@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>72599950781-stpgt0teaqblj431t1tk5a9sbfeqronp.apps.googleusercontent.com</string>
+	<string>807945788696-8r7q8hf867rtnuu5829kvv7935nfm3nu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.72599950781-stpgt0teaqblj431t1tk5a9sbfeqronp</string>
+	<string>com.googleusercontent.apps.807945788696-8r7q8hf867rtnuu5829kvv7935nfm3nu</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBwGHihunIHt-QcNPQvbE3huioGGRTmeHU</string>
+	<string>AIzaSyB3hBx47cRkTPsiQBTUCTFMwdyxFFc5JqY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>72599950781</string>
+	<string>807945788696</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>rw.firebase.gettingstarted</string>
+	<string>nl.mprog.fienlute-pset6</string>
 	<key>PROJECT_ID</key>
-	<string>grocr-875e3</string>
+	<string>pset6-13e10</string>
 	<key>STORAGE_BUCKET</key>
-	<string>grocr-875e3.appspot.com</string>
+	<string>pset6-13e10.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:72599950781:ios:11bd119eb6688866</string>
+	<string>1:807945788696:ios:c9597317cb480c92</string>
 	<key>DATABASE_URL</key>
-	<string>https://grocr-875e3.firebaseio.com</string>
+	<string>https://pset6-13e10.firebaseio.com</string>
 </dict>
 </plist>

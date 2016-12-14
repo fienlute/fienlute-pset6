@@ -7,12 +7,14 @@
 //
 
 import Foundation
-import Firebase 
+import FirebaseAuth
+//import FirebaseDatabase
 
 struct User {
     
     let uid: String
     let email: String
+    
     
     init(authData: FIRUser) {
         uid = authData.uid
@@ -25,3 +27,6 @@ struct User {
     }
     
 }
+
+// let ref = snapshot.ref
+// let parentId = ref.key
