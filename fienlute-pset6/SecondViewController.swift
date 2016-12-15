@@ -20,8 +20,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
     let ref = FIRDatabase.database().reference(withPath: "city-items")
-    var cities: Array<City> = Array<City>()
-    
+ 
+    // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
     
@@ -37,7 +37,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
-        // just one user can use this app
+        // when start is pressed the user is logged in with this fake email
         user = User(uid: "FakeId", email: "travel@person.city")
         
         // 1
@@ -50,7 +50,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // 4
                 let cityItem = CityItem(snapshot: item as! FIRDataSnapshot)
                 newItems.append(cityItem)
-                
             }
             
             // 5
@@ -58,27 +57,20 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
             
         })
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
+    // puts city item in label in tableview cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         let cityItem = items[indexPath.row]
         
         cell.cityName.text = cityItem.name
-        //cell.countryName.text = cityItem.country
-        cell.detailTextLabel?.text = cityItem.addedByUser
-        //cell.cityName.text = cities[indexPath.row].cityName
-        //cell.countryName.text = cities[indexPath.row].country
-        //cell.cityTemp.text = cities[indexPath.row].temperature
-        //cell.cityForecast.text = cities[indexPath.row].forecast
         
         return cell
-
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -105,39 +97,17 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    //    // don't need
-    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        // return cities found by search
-    //        return cities.count
-    //
-    //    }
-    //
-    
-    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //
-    //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-    //
-    //        cell.cityName.text = cities[indexPath.row].cityName
-    //        cell.countryName.text = cities[indexPath.row].country
-    //        cell.cityTemp.text = cities[indexPath.row].temperature
-    //        cell.cityForecast.text = cities[indexPath.row].forecast
-    //
-    //        return cell
-    //    }
-    //
-    
     func userCountButtonDidTouch() {
         performSegue(withIdentifier: listToUsers, sender: nil)
     }
 
-    
-    // get api
-   @IBAction func searchaAction(_ sender: Any) {
-
+    // when "+" button is clicked, save user input in firebase
+    @IBAction func didTapAddButton(_ sender: Any) {
     let alert = UIAlertController(title: "City Item",
                                   message: "Add an Item",
                                   preferredStyle: .alert)
     let saveAction = UIAlertAction(title: "Save",
+                                   
                                    style: .default) { _ in
                                     // 1
                                     guard let textField = alert.textFields?.first,
@@ -156,7 +126,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let cancelAction = UIAlertAction(title: "Cancel",
                                      style: .default)
-    
     alert.addTextField()
     
     alert.addAction(saveAction)
@@ -170,13 +139,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // get information from second to third viewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueDetails" {
-//            print("ELEMTS IN ARRAY", self.cities.count)
-//            print("ROWINDEX", tableView.indexPathForSelectedRow?.row )
-            
+
             if let indexWeather = tableView.indexPathForSelectedRow?.row {
                 let destination = segue.destination as? ThirdViewController
-                destination?.nameCity = self.items[indexWeather].name
-                //print(self.cities[indexWeather].cityName)
+                destination?.detailCity = self.items[indexWeather].name
             }
         }
     }
