@@ -13,6 +13,11 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var theCity: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var cityTemp: UILabel!
+    @IBOutlet weak var cityForecast: UILabel!
+    @IBOutlet weak var citySunrise: UILabel!
+    @IBOutlet weak var citySunset: UILabel!
+    @IBOutlet weak var cityMaxTemp: UILabel!
+    @IBOutlet weak var cityMinTemp: UILabel!
     
     var nameCity = String()
 
@@ -26,9 +31,6 @@ class ThirdViewController: UIViewController {
         
         var request = URLRequest(url:myURL!)
         self.APIrequest(request: request)
-        // self.theCity.text = nameCity
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,10 +38,6 @@ class ThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // self.theCity.text = nameCity
-    }
-
     func APIrequest(request: URLRequest) {
         URLSession.shared.dataTask(with: request as URLRequest!, completionHandler: { data, response, error in
             
@@ -73,11 +71,8 @@ class ThirdViewController: UIViewController {
                             self.countryName.text = country
                             self.cityTemp.text = temperature
 
-                            
                         } else {
-                            
                             // geef alert als de plaats niet bestaat of de data niet beschikbaar is
-                            
                             let alert = UIAlertController(title: "Alert", message: "We do not have the weather data for this place.", preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
@@ -93,16 +88,5 @@ class ThirdViewController: UIViewController {
             }
         }).resume()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
