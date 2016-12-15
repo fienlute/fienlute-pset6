@@ -84,10 +84,14 @@ class ThirdViewController: UIViewController {
                             self.citySunrise.text = sunrise
                             self.dateRequest.text = date
 
-                        // alert when data is not available
+                        // alert when data for place is not available
                         } else {
-                            let alert = UIAlertController(title: "Sorry", message: "We cannot find the weather data for this place.", preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+
+                            let alert = UIAlertController(title: "Sorry", message: "We couldn't find the data for this place.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.default, handler: nil))
+                            
+                            self.navigationController?.popViewController(animated: true)
+                            self.dismiss(animated: true, completion: {})
                             self.present(alert, animated: true, completion: nil)
                         }
                     }
@@ -102,4 +106,5 @@ class ThirdViewController: UIViewController {
             }
         }).resume()
     }
+    
 }

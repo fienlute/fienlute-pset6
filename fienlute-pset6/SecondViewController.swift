@@ -107,7 +107,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                   message: "Add an Item",
                                   preferredStyle: .alert)
     let saveAction = UIAlertAction(title: "Save",
-                                   
                                    style: .default) { _ in
                                     // 1
                                     guard let textField = alert.textFields?.first,
