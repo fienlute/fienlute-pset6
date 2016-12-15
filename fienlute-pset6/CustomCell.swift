@@ -11,9 +11,6 @@ import UIKit
 class CustomCell: UITableViewCell {
     
     @IBOutlet weak var cityName: UILabel!
-    @IBOutlet weak var countryName: UILabel!
-    @IBOutlet weak var cityTemp: UILabel!
-    @IBOutlet weak var cityForecast: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -70,6 +70,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cityItem = items[indexPath.row]
         
         cell.cityName.text = cityItem.name
+        //cell.countryName.text = cityItem.country
         cell.detailTextLabel?.text = cityItem.addedByUser
         //cell.cityName.text = cities[indexPath.row].cityName
         //cell.countryName.text = cities[indexPath.row].country
@@ -132,8 +133,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // get api
    @IBAction func searchaAction(_ sender: Any) {
-    
-    //
+
     let alert = UIAlertController(title: "City Item",
                                   message: "Add an Item",
                                   preferredStyle: .alert)
@@ -152,13 +152,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                     // 4
                                     cityItemRef.setValue(cityItem.toAnyObject())
                                     
-                                    let newCity = cityItem.name.replacingOccurrences(of: " ", with: "+")
-                                    
-                                    let myURL = URL(string: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22\(newCity)%2C%20nl%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys" )
-                                    
-                                    var request = URLRequest(url:myURL!)
-                                    self.APIrequest(request: request)
-                                    
         }
     
     let cancelAction = UIAlertAction(title: "Cancel",
@@ -173,83 +166,20 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    func APIrequest(request: URLRequest) {
-        URLSession.shared.dataTask(with: request as URLRequest!, completionHandler: { data, response, error in
-            
-            // guards execute when the condition is NOT met.
-            guard let data = data, error == nil else {
-                print("error: the data could not be found")
-                
-                return
-            }
-            do {
-                // Convert data to json.
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                    
-                    print(json)
-                    
-                    DispatchQueue.main.async {
-                        let query = json.value(forKey: "query") as! NSDictionary
-                        
-                        if let results = query.value(forKey: "results") as? NSDictionary {
         
-                            let channel = results.value(forKey: "channel") as! NSDictionary
-                            let item = channel.value(forKey: "item") as! NSDictionary
-                            let condition = item.value(forKey: "condition") as! NSDictionary
-                            let temperature = condition.value(forKey: "temp") as! String
-                            let forecast = condition.value(forKey: "text") as! String
-                            let location = channel.value(forKey: "location") as! NSDictionary
-                            let name = location.value(forKey: "city") as! String
-                            let country = location.value(forKey: "country") as! String
-
-                            let appendCity = City(cityName: name, country: country, temperature: temperature, forecast: forecast)
-                            self.cities.append(appendCity)
-                            print(self.cities)
-                            self.tableView.reloadData()
-                            
-                        } else {
-                            
-                            // alert geven
-                            
-                            let alert = UIAlertController(title: "error",
-                                                          message: "We do not have the weather data for this place.",
-                                                          preferredStyle: .alert)
-                            return
-                        }
-                    }
-                } else {
-                    print("convert error")
-                    return
-                }
-                
-            } catch {
-                print ("error")
+    // get information from second to third viewcontroller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueDetails" {
+//            print("ELEMTS IN ARRAY", self.cities.count)
+//            print("ROWINDEX", tableView.indexPathForSelectedRow?.row )
+            
+            if let indexWeather = tableView.indexPathForSelectedRow?.row {
+                let destination = segue.destination as? ThirdViewController
+                destination?.nameCity = self.items[indexWeather].name
+                //print(self.cities[indexWeather].cityName)
             }
-        }).resume()
-    }
-    
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "segueDetails" {
-                if let indexWeather = tableView.indexPathForSelectedRow?.row {
-                    let destination = segue.destination as? ThirdViewController
-                    destination?.nameCity = self.cities[indexWeather].cityName
-                    // print(self.cities[indexWeather].cityName)
-                }
-            }
+        }
     }
 }
-
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
