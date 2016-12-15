@@ -23,7 +23,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var cities: Array<City> = Array<City>()
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     
     override func viewDidLoad() {
@@ -38,6 +37,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
+        // just one user can use this app
         user = User(uid: "FakeId", email: "travel@person.city")
         
         // 1
@@ -50,11 +50,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // 4
                 let cityItem = CityItem(snapshot: item as! FIRDataSnapshot)
                 newItems.append(cityItem)
+                
             }
             
             // 5
             self.items = newItems
             self.tableView.reloadData()
+            
         })
         // Do any additional setup after loading the view.
     }
@@ -64,13 +66,18 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         let cityItem = items[indexPath.row]
         
-        cell.textLabel?.text = cityItem.name
+        cell.cityName.text = cityItem.name
         cell.detailTextLabel?.text = cityItem.addedByUser
+        //cell.cityName.text = cities[indexPath.row].cityName
+        //cell.countryName.text = cities[indexPath.row].country
+        //cell.cityTemp.text = cities[indexPath.row].temperature
+        //cell.cityForecast.text = cities[indexPath.row].forecast
         
         return cell
+
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -97,12 +104,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    //    // don't need
     //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //        // return cities found by search
     //        return cities.count
     //
     //    }
     //
+    
     //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //
     //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
@@ -201,10 +210,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         } else {
                             
                             // alert geven
-    
-                                let alert = UIAlertController(title: "error",
-                                                              message: "We do not have the weather data for this place.",
-                                                              preferredStyle: .alert)
+                            
+                            let alert = UIAlertController(title: "error",
+                                                          message: "We do not have the weather data for this place.",
+                                                          preferredStyle: .alert)
+                            return
                         }
                     }
                 } else {
