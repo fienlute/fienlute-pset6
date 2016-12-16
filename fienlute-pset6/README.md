@@ -3,7 +3,7 @@ Fien Lute
 App Studio 
 pset6 - final assignment
 
-The "My Travel Weather Guide" app helps the user to remember all the places in the world they want to visit. The user can search for cities all over the world. If a city is clicked, it will be stored in firebase (online database). The cities that are saved in Firebase will be printed in the table view on the second View Controller. If a user swipes left, the city can be removed from the table view. It then will be removed from firebase as well. A city can easily be removed from the tableview by swiping it to the left and click delete. 
+The "My Travel Weather Guide" app helps the user to remember all the places in the world they want to visit. The user can search for cities all over the world. If a city is clicked, it will be stored in firebase (online database). The cities that are saved in Firebase will be printed (in alphabetic) order in the table view on the second View Controller. If a user swipes left, the city can be removed from the table view. It then will be removed from firebase as well. A city can easily be removed from the tableview by swiping it to the left and click delete. 
 
 When a city is saved, it can be clicked. When clicked, the Yahoo Weather api will be loaded. The user will go to a page where the country, the current temperature, the forecast, time/date and the time of the sunset/sunrise is displayed.
 
