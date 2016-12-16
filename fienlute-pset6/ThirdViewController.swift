@@ -64,7 +64,7 @@ class ThirdViewController: UIViewController {
                             let item = channel.value(forKey: "item") as! NSDictionary
                             let condition = item.value(forKey: "condition") as! NSDictionary
                             let temperatureF = condition.value(forKey: "temp") as! String
-                            let temperatureC = Int(temperatureF)! - 32
+                            let temperatureC = (Int(temperatureF)! - 32) / 2
                             let forecast = condition.value(forKey: "text") as! String
                             let location = channel.value(forKey: "location") as! NSDictionary
                             let name = location.value(forKey: "city") as! String
