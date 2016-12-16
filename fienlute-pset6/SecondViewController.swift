@@ -25,7 +25,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
  
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
