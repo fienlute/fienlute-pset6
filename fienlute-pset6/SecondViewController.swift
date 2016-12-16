@@ -2,7 +2,8 @@
 //  SecondViewController.swift
 //  fienlute-pset6
 //
-//
+//  In this second view controller the information that's typed in the search bar is saved
+//  in firebase and the data from firebase is presented in the view controller.
 //
 //  Created by Fien Lute on 08-12-16.
 //  Copyright © 2016 Fien Lute. All rights reserved.
@@ -77,6 +78,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
     
     func userCountButtonDidTouch() {
         performSegue(withIdentifier: listToUsers, sender: nil)
@@ -101,6 +103,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cityItemRef.setValue(cityItem.toAnyObject())
             
             searchBar.text = ""
+            
+            textFieldShouldReturn(searchBar: searchBar)
         }
     }
         
@@ -113,6 +117,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 destination?.detailCity = self.items[indexWeather].name
             }
         }
+    }
+    
+    /// dismisses keyboard after action
+    func textFieldShouldReturn(searchBar: UISearchBar) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     /// Gives an alert when an error occurs.
@@ -136,6 +146,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         super.decodeRestorableState(with: coder)
         }
+
 }
 
 

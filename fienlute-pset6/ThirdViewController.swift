@@ -2,6 +2,10 @@
 //  ThirdViewController.swift
 //  fienlute-pset6
 //
+//  In this third view controller the live api information from the city cell that is
+//  clicked, is retrieved. This view controller shows the current weather, the time of the
+//  sunset/sunrise and the current time of the city. 
+// 
 //  Created by Fien Lute on 12-12-16.
 //  Copyright © 2016 Fien Lute. All rights reserved.
 //

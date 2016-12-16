@@ -2,7 +2,9 @@
 //  ViewController.swift
 //  fienlute-pset6
 //
-//  If you press start the user is sent to the next view controller and the user is logged in with the
+//  In this first view controller when the user presses start the user is logged in with a
+//  fake email adress that is defined in the second view controller. When start is pressed
+//  the user will go to the second view controller. is logged in with the
 //  fake emailadress that's later defined.
 //
 //  Created by Fien Lute on 06-12-16.
