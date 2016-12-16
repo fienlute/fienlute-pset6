@@ -79,7 +79,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
     }
 
-    
     func userCountButtonDidTouch() {
         performSegue(withIdentifier: listToUsers, sender: nil)
     }
@@ -101,9 +100,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let cityItemRef = self.ref.child((text?.lowercased())!)
             
             cityItemRef.setValue(cityItem.toAnyObject())
-            
             searchBar.text = ""
-            
             textFieldShouldReturn(searchBar: searchBar)
         }
     }
