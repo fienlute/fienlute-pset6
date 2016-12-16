@@ -8,13 +8,11 @@
 
 import Foundation
 import FirebaseAuth
-//import FirebaseDatabase
 
 struct User {
     
     let uid: String
     let email: String
-    
     
     init(authData: FIRUser) {
         uid = authData.uid
@@ -25,8 +23,5 @@ struct User {
         self.uid = uid
         self.email = email
     }
-    
 }
 
-// let ref = snapshot.ref
-// let parentId = ref.key

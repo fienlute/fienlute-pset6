@@ -2,6 +2,8 @@
 //  SecondViewController.swift
 //  fienlute-pset6
 //
+
+
 //  Created by Fien Lute on 08-12-16.
 //  Copyright © 2016 Fien Lute. All rights reserved.
 //
@@ -16,7 +18,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let listToUsers = "ListToUsers"
     
     // MARK: Properties
-    var items: [CityItem] = [] // --> var cities: Array<City> = Array<City>()
+    var items: [CityItem] = []
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
     let ref = FIRDatabase.database().reference(withPath: "city-items")
@@ -24,35 +26,25 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelectionDuringEditing = false
-        
-        userCountBarButtonItem = UIBarButtonItem(title: "1",
-                                                 style: .plain,
-                                                 target: self,
-                                                 action: #selector(userCountButtonDidTouch))
-        userCountBarButtonItem.tintColor = UIColor.white
-        navigationItem.leftBarButtonItem = userCountBarButtonItem
-        
-        // when start is pressed the user is logged in with this fake email
+                
+        // When start is pressed the user is logged in with this fake email,
+        // because there's only one user.
         user = User(uid: "FakeId", email: "travel@person.city")
         
-        // 1
         ref.observe(.value, with: { snapshot in
-            // 2
             var newItems: [CityItem] = []
             
-            // 3
             for item in snapshot.children {
-                // 4
                 let cityItem = CityItem(snapshot: item as! FIRDataSnapshot)
                 newItems.append(cityItem)
             }
             
-            // 5
             self.items = newItems
             self.tableView.reloadData()
             
@@ -63,7 +55,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return items.count
     }
     
-    // puts city item in label in tableview cell
+    /// Puts city item in label in tableview cell.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         let cityItem = items[indexPath.row]
@@ -83,15 +75,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cityItem.ref?.removeValue()
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 1
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        // 2
-        let cityItem = items[indexPath.row]
         
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -101,41 +85,28 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: listToUsers, sender: nil)
     }
 
-    // when "+" button is clicked, save user input in firebase
+    /// When "+" button is clicked, save user input in firebase.
     @IBAction func didTapAddButton(_ sender: Any) {
-    let alert = UIAlertController(title: "City Item",
-                                  message: "Add an Item",
-                                  preferredStyle: .alert)
-    let saveAction = UIAlertAction(title: "Save",
-                                   style: .default) { _ in
-                                    // 1
-                                    guard let textField = alert.textFields?.first,
-                                        let text = textField.text else { return }
-                                    
-                                    // 2
-                                    var cityItem = CityItem(name: text,
-                                                            addedByUser: self.user.email)
-                                    // 3
-                                    let cityItemRef = self.ref.child(text.lowercased())
-                                    
-                                    // 4
-                                    cityItemRef.setValue(cityItem.toAnyObject())
-                                    
-        }
-    
-    let cancelAction = UIAlertAction(title: "Cancel",
-                                     style: .default)
-    alert.addTextField()
-    
-    alert.addAction(saveAction)
-    alert.addAction(cancelAction)
-    
-    present(alert, animated: true, completion: nil)
-    }
-    
-
         
-    // get information from second to third viewcontroller
+        let text = searchBar.text
+        
+        let numberCharacters = NSCharacterSet.decimalDigits
+        
+        if searchBar.text == "" || text?.rangeOfCharacter(from: numberCharacters) != nil {
+            errorAlert(alertCase: "You need to add a (valid) city")
+        } else {
+            let text = searchBar.text
+            let cityItem = CityItem(name: text!,
+                                    addedByUser: self.user.email)
+            let cityItemRef = self.ref.child((text?.lowercased())!)
+            
+            cityItemRef.setValue(cityItem.toAnyObject())
+            
+            searchBar.text = ""
+        }
+    }
+        
+    /// Get information from second to third viewcontroller.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueDetails" {
 
@@ -145,6 +116,29 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
+    /// Gives an alert when an error occurs.
+    func errorAlert(alertCase: String) {
+        let alert = UIAlertController(title: "Sorry", message: alertCase , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: State restoration
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        
+        if let search = searchBar.text {
+            coder.encode(search, forKey: "search")
+        }
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        searchBar.text = coder.decodeObject(forKey: "search") as! String?
+        
+        super.decodeRestorableState(with: coder)
+        }
 }
 
 
