@@ -2,6 +2,8 @@
 //  AppDelegate.swift
 //  fienlute-pset6
 //
+//  Inserted code for state restoration. 
+//
 //  Created by Fien Lute on 06-12-16.
 //  Copyright © 2016 Fien Lute. All rights reserved.
 //

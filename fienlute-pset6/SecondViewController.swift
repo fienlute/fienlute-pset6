@@ -2,8 +2,8 @@
 //  SecondViewController.swift
 //  fienlute-pset6
 //
-
-
+//
+//
 //  Created by Fien Lute on 08-12-16.
 //  Copyright © 2016 Fien Lute. All rights reserved.
 //
@@ -61,7 +61,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cityItem = items[indexPath.row]
         
         cell.cityName.text = cityItem.name
-        
         return cell
     }
     
@@ -78,7 +77,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func userCountButtonDidTouch() {
@@ -89,10 +87,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func didTapAddButton(_ sender: Any) {
         
         let text = searchBar.text
+        let characterSet = NSMutableCharacterSet()
+        characterSet.formUnion(with: NSCharacterSet.decimalDigits)
+        characterSet.addCharacters(in: "!@#$%^&*()_+}{[]:|;'?/><,.±§")
         
-        let numberCharacters = NSCharacterSet.decimalDigits
-        
-        if searchBar.text == "" || text?.rangeOfCharacter(from: numberCharacters) != nil {
+        if searchBar.text == "" || text?.rangeOfCharacter(from: characterSet as CharacterSet) != nil {
             errorAlert(alertCase: "You need to add a (valid) city")
         } else {
             let text = searchBar.text
@@ -125,7 +124,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     // MARK: State restoration
-    
     override func encodeRestorableState(with coder: NSCoder) {
         
         if let search = searchBar.text {

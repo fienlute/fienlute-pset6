@@ -24,8 +24,6 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bluesky.png")!)
         
         // Get the weather data from yahoo and put it in api function.
@@ -35,7 +33,6 @@ class ThirdViewController: UIViewController {
 
             let request = URLRequest(url:myURL!)
             self.APIrequest(request: request)
-        
     }
 
     override func didReceiveMemoryWarning() {

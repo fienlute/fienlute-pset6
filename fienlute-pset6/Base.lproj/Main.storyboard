@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-YY-Eoq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-YY-Eoq">
                                 <rect key="frame" x="0.0" y="67" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -145,7 +145,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="SXc-YY-Eoq" secondAttribute="trailing" constant="-16" id="SfH-QM-Jwk"/>
                             <constraint firstItem="Kml-Ec-msT" firstAttribute="top" secondItem="SXc-YY-Eoq" secondAttribute="bottom" id="ZZF-UC-sHv"/>
                             <constraint firstItem="SXc-YY-Eoq" firstAttribute="leading" secondItem="Chb-VV-fAk" secondAttribute="leadingMargin" constant="-16" id="dac-MI-2fi"/>
-                            <constraint firstItem="SXc-YY-Eoq" firstAttribute="top" secondItem="2Qc-F3-38H" secondAttribute="bottom" id="uQi-Lo-wrX"/>
+                            <constraint firstItem="SXc-YY-Eoq" firstAttribute="top" secondItem="2Qc-F3-38H" secondAttribute="bottom" constant="3" id="uQi-Lo-wrX"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -171,8 +171,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42t-U4-Zhz">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42t-U4-Zhz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P81-Zn-I0L">
                                         <rect key="frame" x="46" y="105" width="283" height="32"/>
@@ -193,7 +194,6 @@
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2482456267" green="0.529810369" blue="0.79632282259999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sunrise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-SU-UXh">
                                 <rect key="frame" x="14" y="356" width="71" height="21"/>
@@ -287,11 +287,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2482456267" green="0.529810369" blue="0.79632282259999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="42t-U4-Zhz" firstAttribute="top" secondItem="C1F-je-dLz" secondAttribute="top" id="Oq2-sB-mt2"/>
-                            <constraint firstAttribute="trailing" secondItem="42t-U4-Zhz" secondAttribute="trailing" id="Rxv-Xq-8I1"/>
-                            <constraint firstItem="42t-U4-Zhz" firstAttribute="leading" secondItem="C1F-je-dLz" secondAttribute="leading" id="nCA-SS-BYG"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cityForecast" destination="Ote-cG-qjY" id="ged-yW-fex"/>

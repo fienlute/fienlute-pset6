@@ -36,11 +36,11 @@
 		EE1FD1A71DF6EF32008ECA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE1FD1B31DFA11BE008ECA8C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		EE1FD1B71DFA2D42008ECA8C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		EE1FD1BD1DFB2C06008ECA8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EE1FD1BD1DFB2C06008ECA8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "fienlute-pset6/README.md"; sourceTree = "<group>"; };
 		EE1FD1BF1DFEDE3D008ECA8C /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		EE1FD1C91E005905008ECA8C /* CityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityItem.swift; sourceTree = "<group>"; };
 		EE1FD1CB1E005BFE008ECA8C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EE1FD1CD1E01946E008ECA8C /* REVIEW.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = REVIEW.md; sourceTree = "<group>"; };
+		EE1FD1CD1E01946E008ECA8C /* REVIEW.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = REVIEW.md; path = "fienlute-pset6/REVIEW.md"; sourceTree = "<group>"; };
 		EE1FD1CF1E01F414008ECA8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				EE1FD19A1DF6EF32008ECA8C /* fienlute-pset6 */,
+				EE1FD1BD1DFB2C06008ECA8C /* README.md */,
+				EE1FD1CD1E01946E008ECA8C /* REVIEW.md */,
 				EE1FD1991DF6EF32008ECA8C /* Products */,
 				9F5BCDB87B9CDC6095FA1D24 /* Pods */,
 				B61A5676BFECDFA5EAEF4207 /* Frameworks */,
@@ -105,8 +107,6 @@
 				EE1FD1A21DF6EF32008ECA8C /* Assets.xcassets */,
 				EE1FD1A41DF6EF32008ECA8C /* LaunchScreen.storyboard */,
 				EE1FD1A71DF6EF32008ECA8C /* Info.plist */,
-				EE1FD1BD1DFB2C06008ECA8C /* README.md */,
-				EE1FD1CD1E01946E008ECA8C /* REVIEW.md */,
 				EE1FD1CF1E01F414008ECA8C /* GoogleService-Info.plist */,
 			);
 			path = "fienlute-pset6";
