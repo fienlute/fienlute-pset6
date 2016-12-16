@@ -143,7 +143,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         super.decodeRestorableState(with: coder)
         }
-
 }
 
 
